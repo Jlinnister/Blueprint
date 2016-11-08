@@ -9,7 +9,7 @@ class UberClient
   end
 
   def prices(start_lat, start_long, end_lat, end_long)
-    diffs = [-.002, -.001, .001, .002]
+    diffs = [-0.002, -0.001, 0.001, 0.002]
     prices = []
     diffs.each do |diff1|
       diffs.each do |diff2|
