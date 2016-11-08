@@ -5,10 +5,21 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVPQvg0iwOqJjL11BTzAiuDX6iRQ9IgSE&libraries=places"></script>
 </head>
 <body>
 
 <%= yield %>
+
+<script>
+    function init() {
+        var input = document.getElementById('destination-address');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+    }
+
+    google.maps.event.addDomListener(window, 'load', init);
+</script>
 
 </body>
 </html>
